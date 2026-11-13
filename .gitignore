@@ -1,0 +1,53 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node / TypeScript
+node_modules/
+dist/
+build/
+coverage/
+.next/
+*.tsbuildinfo
+.turbo/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Environnement virtuel du backend v1
+env/
+
+# Fichiers sans rapport avec le projet (maquette de cours)
+*.xlsx
+
+# Fichiers uploadés pendant les tests (procès-verbaux) et documents sans rapport
+Backend_Projet_SIG/backend/public/media/
+Frontend_Projet_SIG/frontend_sig/public/Images/Essais Corrections SN GI.pdf
+
+# Documents PDF (articles, rapports, exports) : jamais dans le dépôt
+*.pdf
+
+# Private notes and superseded files, not part of the published project
+GUIDE.md
+Lisez moi !.txt

@@ -1,0 +1,45 @@
+# ElectionLive local stack: PostgreSQL/PostGIS + Redis + Django/Channels API.
+# Usage (from the repository root):
+#   docker compose up -d --build
+#   docker compose exec backend python manage.py seed_demo
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sigproject
+    ports:
+      - "5434:5432"   # 5434 on the host to avoid clashing with a local PostgreSQL
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sigproject"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+
+  backend:
+    build: ./Backend_Projet_SIG
+    environment:
+      DJANGO_SECRET_KEY: dev-secret-key-change-me
+      DB_HOST: db
+      DB_NAME: sigproject
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+    ports:
+      - "8000:8000"
+    volumes:
+      - media:/app/public/media
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+volumes:
+  pgdata:
+  media:

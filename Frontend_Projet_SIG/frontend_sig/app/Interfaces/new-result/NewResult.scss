@@ -1,0 +1,92 @@
+.new-result{
+    
+    
+    h1{
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        
+        padding-bottom: 3%;
+    }
+    // h1::before{
+    //     content: '';
+    //     background: #1a4162;
+    //     height: 10px;
+    //     width: 35px;
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    // }
+    
+    .card-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        gap: 15px;
+        justify-content: center;
+        i{
+            font-size: 100px;
+        }
+        .card{
+            background-color: #FFFCFC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.25);
+            padding-bottom: 5px;
+            .candidat-profile{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                border-bottom: 1px solid #1a4162;
+                margin-bottom: 2%;
+            }
+            input{
+                width: 80%;
+                border-radius: 5px;
+                height: 35px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #8b8b8b96;
+                background-color: #fff;
+                line-height: 53px;
+                /* Centrage vertical */
+                padding-left: 25px;
+                padding-right: 25px;
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+            input:focus {
+                outline-color: #0ccaf03f;
+                outline-style: solid;
+                outline-width: 2px;
+            }
+
+            input::placeholder {
+                color: #404040;
+                /* Espace pour le texte et le placeholder */
+            }
+        }
+    }
+    .submit-result{
+        margin: 5% 10%;
+        width: 80%;
+        height: 45px;
+        background-color: #1A4162;
+        color: white;
+        font-weight: 600;
+        border-radius: 10px;
+        border-style: none;
+        bottom: 12%;
+        transition: 300ms ease-in-out;
+    }
+    .submit-result:hover{
+        background-color: #215380;
+        transform: scale(1.02, 1.02);
+        cursor: pointer;
+        transition: 300ms ease-in-out;
+    }
+    
+}

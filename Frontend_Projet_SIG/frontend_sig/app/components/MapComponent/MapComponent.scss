@@ -1,0 +1,33 @@
+/* Classe globale pour le popup */
+@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Podkova:wght@400..800&display=swap');
+.leaflet-custom-popup {
+    background-color: white; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre */
+    padding: 10px; /* Espacement intérieur */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Titre du popup */
+  .popup-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007bff; /* Couleur du titre */
+  }
+  
+  /* Bouton dans le popup */
+  .popup-button {
+    background-color: #007bff; /* Fond bleu */
+    color: white; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .popup-button:hover {
+    background-color: #0056b3; /* Couleur de survol */
+  }

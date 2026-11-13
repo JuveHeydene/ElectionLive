@@ -1,0 +1,149 @@
+.voting-centers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    h1{
+
+    }
+    .Input-filters{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        .input-label{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            input, select{
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(170, 164, 164);
+                border-radius: 5px;
+                height: 30px;
+                line-height: 53px;
+                /* Centrage vertical */
+                padding-left: 15px;
+                
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+            input:focus, select:focus{
+                outline-color: #0ccaf03f;
+                outline-style: solid;
+                outline-width: 2px;
+            }
+            input::placeholder{
+                font-size: 15px;
+            }
+        }
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        thead tr{
+            background-color: #1a4162;
+            color: white;
+            text-align: left;
+            
+            th{
+                font-weight: bold;
+            }
+        }
+        td,th{
+            padding: 9px 12px;
+        }
+        tbody tr{
+            border-bottom: 1px solid #dddddd;
+        }
+        tbody tr:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
+        tbody tr:last-of-type{
+            border-bottom: 2px solid #1a4162;
+        }
+        
+    }
+    .pagination{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-around;
+        
+    }
+    .modal{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+        margin: 20px 20px;
+        padding: 10px 10px;
+        background-color: #FCFCFC;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.25);
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        
+        h2{
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .label-input{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            gap: 20px;
+            input, select{
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(170, 164, 164);
+                border-radius: 5px;
+                height: 30px;
+                line-height: 53px;
+                /* Centrage vertical */
+                padding-left: 15px;
+                
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+            input:focus, select:focus{
+                outline-color: #0ccaf03f;
+                outline-style: solid;
+                outline-width: 2px;
+            }
+            input::placeholder{
+                font-size: 15px;
+            }
+            
+        }
+        .actions{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            .save{
+                background-color: #06999e;
+                color: white;
+                border-radius: 5px;
+                height: 30px;   
+                padding: 5px;
+                font-weight: 400;
+            }
+            .save:hover{
+                background-color: #2acacf;
+            }
+            .abort{
+                background-color: #9e0606;
+                color: white;
+                border-radius: 5px;
+                height: 30px;   
+                padding: 5px;
+                font-weight: 400;
+            }
+            .abort:hover{
+                background-color: #cf2a2a;
+            }
+        }
+    }
+}

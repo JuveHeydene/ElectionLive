@@ -1,0 +1,159 @@
+.home {
+  font-family: "Podkova", serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    "navbar navbar"
+    "main main";
+  min-height: 100vh;
+  
+  nav {
+    z-index: 9999;
+    display: flex;
+    border-bottom: 1px solid #1a4162;
+    flex-direction: row;
+    align-items: center;
+    position: sticky;
+    justify-content: space-between;
+    top: 0;
+    grid-area: navbar;
+    background-color: rgb(255, 255, 255);
+    padding: 0 2%;
+    .logo {
+      width: 150px;
+      height: 80px;
+    }
+    .nav-items {
+      display: flex;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 17px;
+      a {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 35px;
+        background: #ffffff;
+        border: 1px solid rgba(26, 40, 62, 0.8);
+        border-radius: 5px;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+      a:hover {
+        transition: 300ms ease-in-out;
+        background: #1a4162;
+        border: 1px solid #ffffff;
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+    h1 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 35px;
+      line-height: 39px;
+      color: #002c51;
+    }
+  }
+  
+  main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 30px 1fr 1fr;
+    grid-template-areas:
+      "candidatesWithPic candidatesWithPic"
+      "keystats keystats"
+      "statistics map"
+      "table table";
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 2%;
+    overflow: auto;
+    .table {
+      grid-area: table;
+      
+    }
+    .candidatesWithPic{
+      display: flex;
+      justify-content: space-between;
+      gap: 2%;
+      grid-area: candidatesWithPic;
+      .candidate-card{
+        display: flex;
+        flex-direction: column;
+        gap: 2%;
+        align-items: center;
+        
+      }
+
+    }
+    .statistics {
+      padding: 2% 0px;
+      grid-area: statistics;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 400px;
+      gap: 50px;
+      .linechart{
+        position: relative;
+      }
+      .pie-chart {
+        position: relative;
+        .chart {
+          position: absolute;
+          height: 270px;
+          width: 270px;
+          top: 0;
+          left: 25%;
+        }
+        
+        .candidates {
+          li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px ;
+            align-items: center;
+          }
+          .color {
+            display: block;
+            width: 24px;
+            height: 16px;
+            
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+    .Map {
+      padding: 2% 0px;
+      grid-area: map;
+    }
+    .key-stats {
+      grid-area: keystats;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .label-stat {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

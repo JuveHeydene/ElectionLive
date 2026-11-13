@@ -1,0 +1,169 @@
+aside {
+    position: sticky;
+    top: 100px;
+   
+    height: calc(100vh - 100px);
+    grid-area: sidebar;
+    box-sizing: border-box;
+    padding: 5px 1em;
+    border-right: 1px solid #1a4162;
+    overflow-y: auto;
+    text-wrap: nowrap;
+    transition: max-width 300ms ease-in-out;
+    
+    max-width: 300px;
+    scrollbar-width: none;
+    
+    ul {
+      list-style: none;
+    }
+    ul li.active a {
+      color: #ffffff;
+    }
+    a,
+    .dropdown-btn {
+      border-radius: 0.5em;
+      padding: 0.85em;
+      text-decoration: none;
+      color: #d4dbe0de;
+      display: flex;
+      align-items: center;
+      gap: 1em;
+    }
+    .dropdown-btn {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+    }
+    a span,
+    .dropdown-btn span {
+      flex-grow: 1;
+    }
+    a:hover,
+    .dropdown-btn:hover {
+      background-color: #275781;
+    }
+    .sub-menu {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: 300ms ease-in-out;
+      > div {
+        overflow: hidden;
+      }
+    }
+    .sub-menu.show {
+      grid-template-rows: 1fr;
+    }
+    .dropdown-btn i {
+      transition: 200ms ease;
+    }
+    .rotate i:last-child {
+      rotate: 180deg;
+    }
+    .sub-menu a {
+      padding-left: 2em;
+    }
+    #Menu {
+      margin-left: auto;
+      padding: 1em;
+      border: none;
+      border-radius: 0.5em;
+      background: none;
+      cursor: pointer;
+
+      i {
+        transition: rotate 150ms ease;
+      }
+      &:hover {
+        background: #275781;
+      }
+    }
+  }
+  aside.close{
+    padding: 5px;
+    max-width: 60px;
+    transition: 300ms ease-in-out;
+    
+  }
+  aside::-webkit-scrollbar {
+    width: 10px; /* Largeur de la scrollbar */
+  }
+
+  aside::-webkit-scrollbar-track {
+    background: #1a4162; /* Couleur de l'arrière-plan de la track */
+  }
+
+  aside::-webkit-scrollbar-thumb {
+    background-color: #436583; /* Couleur de la "thumb" (la barre qu'on fait glisser) */
+    border-radius: 5px; /* Arrondi des coins de la barre */
+    border: 2px solid #1a4162; /* Bordure autour de la barre */
+  }
+
+  aside::-webkit-scrollbar-thumb:hover {
+    background-color: #6592b9; /* Couleur de la thumb au survol */
+  }
+  aside > ul > li:first-child {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 800px) {
+    aside{
+      background-color: #1a4162;
+        height: 60px;
+        max-width: 100%;
+        border-right: none;
+        border-top: 1px solid #ffffff;
+        padding: 0;
+        position: fixed;
+        top: unset;
+        bottom: 0;
+        grid-area: unset;
+        >ul{
+          padding: 0;
+          display: grid;
+          grid-auto-columns: 60px;
+          grid-auto-flow: column;
+          align-items: center;
+          overflow-x: scroll;
+        }
+        
+        ul a, ul .dropdown-btn{
+          width: 60px;
+          padding: 60px;
+          padding: 0;
+          border-radius: 0;
+          justify-content: center;
+        }
+        ul li span, ul li span:first-child, .dropdown-btn i:last-child{
+          display: none;
+        }
+        ul li .sub-menu.show{
+          position: fixed;
+          bottom: 60px;
+          left: 0;
+          box-sizing: border-box;
+          height: 60px;
+          width: 100%;
+          background-color: #1a4162;
+          border-top: 1px solid #ffffff;
+          display: flex;
+          justify-content: center;
+          >div{
+            overflow-x: auto;
+          }
+          li{
+            display: inline-flex;
+          }
+          a{
+            box-sizing: border-box;
+            padding: 1em;
+            width: auto;
+            justify-content: center;
+          }
+        }
+      }
+    }

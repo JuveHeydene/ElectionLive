@@ -1,0 +1,260 @@
+.login-page{
+    /*Début : Gestion de la disposition de la page logo à gauche et formulaire à droite*/
+    @media (min-width: 801px) { // Ecran de plus de 801px
+        
+        .grid-container{
+            min-height: 100vh;
+            display: grid;
+            border: none;
+            grid-template-columns: repeat(auto-fit,50%);
+          
+            .logo{
+                background-color: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .logo img{
+                height: Auto;
+                width: Auto;
+                margin-left: 5%;
+            }
+            .logo h1{
+                color: #1A4162;
+                font-size: 2rem;
+                font-weight: 800;
+                text-align: center;
+            }
+            
+            
+        }
+        }
+    @media (max-width: 800px) { // Ecran de moins de 801 px
+        .grid-container {
+            max-height: 100vh;
+            display: grid;
+            border: none;
+            grid-template-columns: 1fr;
+            grid-template-rows: 220px 1fr;
+        }
+        .logo{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .logo img {
+            height: Auto;
+            width: 90%;
+        }
+    
+        .logo h1 {
+            display: none;
+        }
+    }
+    /*Fin*/
+
+    //Debut Style de la section du formulaire
+    .login-form-contain { 
+        //Debut : Positionnement de la section formulaire
+        position: relative;
+        background-color: #ffffff;
+        height: 100%;
+
+        //Fin
+
+        //Debut style formulaire 
+        form {
+            position: relative;
+            left: 20%;
+            top: 20%;
+            width: 60%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            text-align: center;
+            background-color: #FFFCFC;
+            border-radius: 16px;
+            box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.25);
+
+            .form-title { // Style du titre
+                font-weight: 700;
+                font-size: calc(100% + 17px);
+                margin-top: calc(9% + 15px);
+                margin-bottom: calc(7% + 0px);
+                color: #1A4162;
+            }
+
+            .inputs { //Div qui contient tous les inputs et le boutton
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            //Debut : Style pour un input
+            input { 
+                position: relative;
+                width: 80%;
+                height: 45px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #8b8b8b3d;
+                border-radius: 7px;
+                background-color: #fff;
+                line-height: 53px;
+                /* Centrage vertical */
+                padding-left: 25px;
+                padding-right: 25px;
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+
+            input:focus {
+                outline-color: #0ccaf03f;
+                outline-style: solid;
+                outline-width: 2px;
+            }
+
+            input::placeholder {
+                color: #404040;
+                /* Espace pour le texte et le placeholder */
+            }
+            //Fin 
+
+
+            //Debut du style boutton de connexion
+            .connexion {
+                width: 80%;
+                height: 45px;
+                background-color: #1A4162;
+                color: white;
+                font-weight: 600;
+                border-radius: 10px;
+                border-style: none;
+                bottom: 12%;
+                transition: 300ms ease-in-out;
+            }
+
+            .connexion:hover {
+                background-color: #215380;
+                transform: scale(1.02, 1.02);
+                cursor: pointer;
+                transition: 300ms ease-in-out;
+            }
+            //Fin
+
+            //Debut Style "mot de passe oublié"
+            .oublie:hover {
+                color: #4e83b1;
+            }
+            .oublie {
+                padding: 2%;
+                color: #1A4162;
+                font-size: 13px;
+                opacity: 0.95;
+            }
+            //Fin
+
+            //Style pour la ligne
+            .line {
+                width: 80%;
+                height: 0px;
+                margin-top: 3%;
+
+                border: 1px solid #414e58;
+            }
+
+            //Mot de passe incorrect
+            .incorrect-pwd{
+                padding: 2%;
+                color: #a12727;
+                font-size: 12px;
+            }
+            .not-visible{
+                display: none;
+            }
+            
+        }
+
+
+        
+    }
+    //Fin
+
+    //Gestion du responsive debut
+    @media (max-width: 800px) {
+            
+        .login-form-contain{
+            height: 100%;
+            position: relative;
+            
+    
+        form {
+            position: relative;
+            top: 5%;
+            left: 5%;
+            width: 90%;
+            height: 100%;
+            max-height: 400px;
+            min-height: 370px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            text-align: center;
+            justify-content: unset;
+            
+            border-radius: 16px;
+            box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.25);
+        }
+
+        .inputs {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        form input {
+            
+            
+            border-style: solid;
+            border-width: 1px;
+            border-color: #8b8b8b3d;
+            border-radius: 5px;
+            background-color: #fff;
+            line-height: 53px;
+            /* Centrage vertical */
+            padding-left: 15px;
+            padding-right: 15px;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        form .line,
+        form .oublie {
+            margin-top: 12px;
+        }
+
+        form .form-title {
+            margin: 20px;
+        }
+
+        form .connexion {
+            
+            
+            background-color: #1A4162;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            border-style: none;
+        }
+    }
+    }
+    //Fin
+}

@@ -1,0 +1,30 @@
+.layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 100px 1fr auto;
+    grid-template-areas:
+      "navbar navbar"
+      "sidebar main"
+      "sidebar footer";
+    min-height: 100vh;
+    background-color: #1a4162;
+    main {
+        grid-area: main;
+        background-color: #ffffff;
+        padding: 5%;
+        overflow: auto;
+    }
+}
+
+@media (max-width: 800px) {
+  .layout{
+    grid-template-columns: 1fr;
+    grid-template-areas: unset;
+    
+    main{
+      padding: 2em 1em 60px 1em;
+      grid-area: unset;
+    }
+    
+  }
+}
